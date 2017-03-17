@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <meta name="referrer" content="never">
+	<style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+	.back{
+        width:100%;
+        background: #223;
+    }
+	.bear{
+		width:200px;
+		height:100px;
+		left:-20%;
+        bottom:20px;
+		position: absolute;
+		margin-left: -3.125em;
+		z-index: 999;
+		background: url(http://upload-images.jianshu.io/upload_images/3257837-e40a2c0d9c65dbc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 0 0 no-repeat;
+		background-size: 100em 100%;
+	}
+	.bear{
+		opacity: 1;
+		transition:opacity 0.4s linear 0.6s;
+	}
+	.bear.running{
+	animation:bear-run 0.8s steps(1) 0s infinite normal none;
+	}
+	div{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    display: block;
+	}
+	@keyframes bear-run{
+             0%{
+                 background-position: 0 0;
+            }
+           12.5%{
+                 background-position: -200px 0;
+             }
+             25%{
+                background-position: -400px 0 ;
+           }
+           37.5%{
+               background-position: -600px 0 ;
+            }
+             50%{
+                 background-position: -800px 0 ;
+            }
+            62.5%{
+                background-position: -1000px 0 ;
+             }
+            75%{
+                 background-position: -1200px 0 ;
+             }
+            87.5%{
+                 background-position: -1400px 0 ;
+             }
+            100%{
+                 background-position: 0 0;
+             }
+  	}
+  @keyframes moving{
+             0%{
+                 background-position: 0 0;
+            }
+           12.5%{
+                 background-position: -240px 0;
+             }
+             25%{
+                background-position: -480px 0 ;
+           }
+           37.5%{
+               background-position: -720px 0 ;
+            }
+             50%{
+                 background-position: -960px 0 ;
+            }
+            62.5%{
+                background-position: -1200px 0 ;
+             }
+            75%{
+                 background-position: -1440px 0 ;
+             }
+            87.5%{
+                 background-position: -1680px 0 ;
+             }
+            100%{
+                 background-position: -1920px 0;
+             }
+    }
+    .mountain1{
+        height:10.5em;
+        background:url(http://upload-images.jianshu.io/upload_images/3257837-fc46d2d944a9eb86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) repeat-x;
+        background-size: auto 100%;
+        animation:moving 100s linear 0.8s infinite normal none;
+        overflow: hidden;
+        z-index: 3
+    }
+    .mountain2{
+        height:12.5em;
+        background:url(http://upload-images.jianshu.io/upload_images/3257837-e20ee73ad0a8bc5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) repeat-x;
+        background-size: auto 100%;
+        animation:moving 100s linear 0.8s infinite normal none;
+        overflow: hidden;
+        opacity: 0.6;
+        z-index: 2;
+    }
+    .mountain3{
+        height:20.5em;
+        background:url(http://upload-images.jianshu.io/upload_images/3257837-7209744aa107ec15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) repeat-x;
+        background-size: auto 100%;
+        animation:moving 100s linear 0.8s infinite normal none;
+        overflow: hidden;
+        opacity: 0.4;
+        z-index:1;
+    }
+    .start{
+        background:url(http://upload-images.jianshu.io/upload_images/3257837-f1b71ce65b853d3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) repeat-x;
+        background-size: 100% 100%;
+        animation:moving 100s linear 0.8s infinite normal none;
+        overflow: hidden;
+        opacity: 0.4;
+        z-index:1;
+        width:100%;
+        position: absolute;
+        left:0px;
+        top:0px;
+        background-color: #000;
+    }
+    .mountain{
+        width:100%;
+        position: absolute;
+        left:0px;
+        bottom:0px;
+
+    }
+    .moon{
+        background: url(http://upload-images.jianshu.io/upload_images/3257837-3dce0bd6b2b5e6d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) no-repeat 100% 100%;
+        background-blend-mode:lighten;
+        background-size: 100%;
+        z-index:99;
+        top:130px;
+        left:80%;
+        width:100px;
+        height:100px;
+        position: absolute;
+    }
+    .music-box{
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        margin-left: -200px;
+        z-index: 100;
+    }
+    .musicbox{
+        font-family:microsoft Yahei;
+        -webkit-font-smoothing: antialiased;
+        width: 400px;
+        height: 150px;
+        border-radius: 5px;
+        position: relative;
+        background-color: #234;
+    }
+    @font-face {
+        font-family: 'iconfont';  /* project id 256161 */
+        src: url('http://at.alicdn.com/t/font_a8lm9d9mskinewmi.eot');
+        src: url('http://at.alicdn.com/t/font_a8lm9d9mskinewmi.eot?#iefix') format('embedded-opentype'),
+        url('http://at.alicdn.com/t/font_a8lm9d9mskinewmi.woff') format('woff'),
+        url('http://at.alicdn.com/t/font_a8lm9d9mskinewmi.ttf') format('truetype'),
+        url('http://at.alicdn.com/t/font_a8lm9d9mskinewmi.svg#iconfont') format('svg');
+    }
+    .iconfont {
+        font-family:"iconfont" !important;/*这样设定的话就会使得所有有class=iconfont的标签的样式改变，所以如果还有些地方需要图标样式发生更改的话，记得要在.iconfont之前加具体的路径*/
+        font-style: normal
+    }
+    .musicbox .control .fa {
+        margin-right: 12px;
+        cursor: pointer;
+    }
+
+    .musicbox .info{
+        color: #fff;
+        display: block;
+        cursor: pointer;
+        margin-top: 60%;
+        margin: 0 auto;
+        width: 200px;
+    }
+    .musicbox .title ,.musicbox .auther{
+        text-align: center;
+        margin-top: 5px;
+    }
+    .musicbox .progress{
+        width: 300px;
+    }
+    .musicbox .progress .bar {
+        height: 3px;
+        margin-top: 15px;
+        margin-left: 10px;
+        background-color: rgba(0,0,0,0.2);
+        cursor: pointer;
+    }
+    .musicbox .progress .progress-now{
+        background-color: #ccc;
+        height: 3px;
+        width: 0;
+        position: relative;
+    }
+    .musicbox .time{
+        text-align: right;
+        color: #ccc;
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+    }
+
+    .musicbox .control .goback,.musicbox .control .forward{
+        color: #fff;
+        font-size: 20px;
+        position: absolute;
+        top:60%;
+    }
+    .musicbox .control .goback{
+        left: 70px;
+    }
+    .musicbox .control .forward{
+        right: 70px;
+    }
+    .musicbox .infobar{
+        height: 30px;
+        background-color: rgb(131,175,155);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+    }
+    .musicbox .infobar .vidio{
+        float: right;
+        margin-right: 10px;
+        line-height: 30px;
+        color: #fff;
+        font-size: 20px;
+    }
+    .musicbox .infobar .like{
+        line-height: 30px;
+        margin-left: 10px;
+        float: left;
+        color:white;
+        font-size: 20px;
+    }
+    .musicbox .choose{
+        height: 40px;
+        background-color: #ccc;
+        position: relative;
+    }
+    .musicbox .choose .music-style li{
+        display:inline-block;
+        text-align: center;
+        line-height: 40px;
+        list-style: noen;
+        margin-left:50px;
+        width: 60px;
+        font-size: 20px;
+        font-weight:900
+    }
+    .musicbox .choose .pre-style,.musicbox .choose .next-style{
+        position: absolute;
+        font-size: 30px;
+        color: #fff;
+        top: 5px;
+    }
+    .musicbox .choose .pre-style{
+        left: 10px;
+    }
+    .musicbox .choose .next-style{
+        right: 10px;
+    }
+    .musicbox .music-style .active{
+        font-size: 30px;
+        color: #fff;
+    }
+	</style>
+</head>
+<body>
+<div class="back">
+    <div class="start">
+    </div>
+    <div class="moon"></div>
+	<div class="back-ground">
+		<div id="bear" class="bear running"></div>
+	</div>
+    <div class="mountains">
+        <div class="mountain mountain1"></div>
+        <div class="mountain mountain2"></div>
+        <div class="mountain mountain3"></div>
+    </div>
+</div>
+<div class="music-box">
+    <div class="musicbox">
+    <div class="infobar">
+        <p class="vidio iconfont">&#xe6be;</p>
+        <p class="like iconfont">&#xe699;</p>
+    </div>
+    <div class="choose">
+        <ul class="music-style">
+            <li>R&B</li>
+            <li class="active">Pop</li>
+            <li>80后</li>
+        </ul>
+        <p class="pre-style"><</p>
+        <p class="next-style">></p>
+    </div>
+        <div class="music">
+            <div class="control">
+                <span class="goback">
+                    <i class="fa fa-step-backward iconfont">&#xe647;</i>
+                </span>
+                <span class="forward">
+                    <i class="fa fa-step-forward iconfont">&#xe646;</i>
+                </span>
+            </div>
+            <div class="info fa-pause">
+                <div class="title">My songs</div>
+                <div class="auther">Aleen</div>
+            </div>
+        </div>
+        <div class="progress">
+            <div class="bar">
+                <div class="progress-total"></div>
+                <div class="progress-now"></div>
+            </div>
+
+            <div class="time">0:00</div>
+        </div>
+    </div>
+</div>
+
+<script src='http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js'></script>
+<script>
+
+/*这个是熊出来的动画*/
+$(".bear").animate({left:'48%'},10000);
+$(".moon").animate({left:"-200px"},100000);
+$(".web-font").animate({opacity:1},3000)
+
+var height = $(window).height();
+$(".start").css("height", height);
+$(".back").css("height",height)
+    
+var musicList = [
+  {
+    src: 'http://www.tingge123.com/mp3/2016-05-31/1464670945.mp3',
+    title: 'IF YOU',
+    auther: 'Big Bang'
+  },
+  {
+    src: 'http://cloud.hunger-valley.com/music/玫瑰.mp3',
+    title: '玫瑰',
+    auther: '贰佰'
+  }
+]
+
+var backBtn = document.querySelector('.musicbox .goback')
+var playBtn = document.querySelector('.musicbox .info')
+var forwardBtn = document.querySelector('.musicbox .forward')
+var titleNode = document.querySelector('.musicbox .title')
+var authorNode = document.querySelector('.musicbox .auther')
+var timeNode = document.querySelector('.musicbox .time')
+var progressBarNode = document.querySelector('.musicbox .progress .bar')
+var progressNowNode = document.querySelector('.musicbox .progress-now')
+
+var music = new Audio()
+music.autoplay = true
+var musicIndex = 0
+
+loadMusic(musicList[musicIndex])
+
+playBtn.onclick = function(){
+ var icon = this
+ if(icon.classList.contains('fa-play')){
+   music.play()
+ }else{
+   music.pause()
+ }
+ icon.classList.toggle('fa-play')
+ icon.classList.toggle('fa-pause')
+}
+
+forwardBtn.onclick = loadNextMusic
+backBtn.onclick = loadLastMusic
+music.onended = loadNextMusic
+music.shouldUpdate = true
+music.ontimeupdate = function(){
+  var _this = this
+  if(_this.shouldUpdate) { 
+     updateProgress()
+     _this.shouldUpdate = false
+    setTimeout(function(){
+      _this.shouldUpdate = true
+    }, 1000)
+  }
+}
+progressBarNode.onclick = function(e){
+  var percent = e.offsetX/parseInt(getComputedStyle(this).width)
+  music.currentTime = percent * music.duration
+  progressNowNode.style.width = percent*100+"%"
+}
+
+
+
+
+function loadMusic(songObj){
+  music.src = songObj.src
+  titleNode.innerText = songObj.title
+  authorNode.innerText = songObj.auther
+}
+
+function loadNextMusic(){
+  musicIndex++
+  musicIndex = musicIndex%musicList.length
+  loadMusic(musicList[musicIndex])  
+}
+
+function loadLastMusic(){
+  musicIndex--
+  musicIndex = (musicIndex + musicList.length)%musicList.length
+  loadMusic(musicList[musicIndex])  
+}
+
+function updateProgress(){
+  var percent = (music.currentTime/music.duration)*100+'%'
+  progressNowNode.style.width = percent
+  
+  var minutes = parseInt(music.currentTime/60)
+  var seconds = parseInt(music.currentTime%60)+''
+  seconds = seconds.length == 2? seconds : '0'+seconds
+  timeNode.innerText = minutes + ':' + seconds
+}
+</script>
+</body>
+</html>
