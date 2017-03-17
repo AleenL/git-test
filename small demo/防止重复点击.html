@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<button cd="nihao">方式一</button>
+<button onclick="this.disabled = true;">方式二</button>
+<body>
+<script>
+var btn=document.getElementById("nihao");
+btn.addEventListener('click', function(e){
+    console.log(this);
+    setTimeout(function(){
+        console.log(this);
+    }, 200);
+}, false);
+</script>
+ 
+</body>
+</html>
+

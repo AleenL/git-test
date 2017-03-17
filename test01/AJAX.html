@@ -1,0 +1,25 @@
+<html>
+<meta charset="UTF-8">
+<style>
+	#myDiv{
+		background:url(dns.jpg);
+	}
+</style>
+<body>
+<div id="myDiv"><h2>我的名字</h2></div>
+<button id="myBtn">修改内容</button>
+<script type="text/javascript" src="b.php?action=test"></script>
+<script>
+	document.getElementById("myBtn").addEventListener("click",function(){
+		var xmlhttp=new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function(){
+			if(xmlhttp.readyState==4 && xmlhttp.status==200){
+				document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+			}
+		}
+		xmlhttp.open("GET","test.php",true);
+		xmlhttp.send();
+	})
+</script>
+</body>
+</html>
