@@ -1,0 +1,24 @@
+@precent:1;
+@Left:-240px;
+@Top:0px;
+
+.keyframes run{
+    @precent*0{
+        background-position:@Left*0 @Top;
+    }
+    @precent*0.125{
+        background-position:@Left*(-1) @Top;
+    }
+    @precent*0.25{
+        background-position:@Left*(-2) @Top;
+    }
+    @precent*0.375{
+        background-position:@Left*(-3) @Top;
+    }
+    @precent*0.5{
+        background-position:@Left*(-4) @Top;
+    }
+    @precent*0.625{
+        background-position:@Left*(-5) @Top;
+    }
+}
